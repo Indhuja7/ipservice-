@@ -28,7 +28,7 @@ jobs:
       - name: Convert PHP to Static HTML (Optional)
         run: |
           mkdir output
-          cp -r . output/
+          rsync -av --exclude='output' ./ output/
           # Use PHP to render dynamic pages into static HTML (if needed)
           # Example: php script.php > output/index.html
           # Remove PHP files if they shouldn't be part of the output
